@@ -1,0 +1,55 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+import RxSwift
+import RxCocoa
+
+class {{ module_info.name }}ViewController: ViewController, MVVMView {
+    // MARK: - Constants
+    private struct Constants {
+        
+    }
+
+    // MARK: - Variables
+    var viewModel: {{ module_info.name }}ViewModelProtocol!
+    let disposeBag = DisposeBag()
+
+    // MARK: - Outlets
+    
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        markup()
+        subscribe()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureNavigationBar()
+    }
+    
+    // MARK: - Configurations
+    private func configureNavigationBar() {
+        
+    }
+
+    private func subscribe() {
+
+    }
+    
+    // MARK: - Markup
+    private func markup() {
+        
+    }
+}
+
+
+

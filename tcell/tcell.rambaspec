@@ -1,0 +1,16 @@
+# Template information section
+name: "abzal"
+summary: "MVVM module template with UIViewController playing as a View. Used in 1Fit."
+author: "Abzal Kobenov"
+version: "1.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+# View layer
+- {name: Repositories/Repository.swift, path: Code/Repository/Repository.swift.liquid}
+- {name: ViewModels/ViewModel.swift, path: Code/ViewModel/ViewModel.swift.liquid}
+- {name: Views/.swift, path: Code/View/View.swift.liquid}
+
+# The declarations for test files
+test_files:

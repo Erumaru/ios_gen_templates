@@ -1,0 +1,34 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+import RxSwift
+
+import Foundation
+import Cache
+import Crashlytics
+
+protocol {{ module_info.name }}Repository {
+    
+}
+
+class {{ module_info.name }}DataRepository: {{ module_info.name }}Repository {
+    private enum Keys: String {
+        case diskConfig = "{{ module_info.name }}View"
+    }
+    
+    // MARK: - Variables
+    private func cache<T: Codable>(model: T.Type) -> Cache.Storage<T> {
+        let storage = try! Cache.Storage(diskConfig: DiskConfig(name: Keys.diskConfig.rawValue), memoryConfig: MemoryConfig(expiry: .never), transformer: TransformerFactory.forCodable(ofType: model))
+        return storage
+    }
+}
+
+
+
+

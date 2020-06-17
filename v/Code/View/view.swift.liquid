@@ -1,0 +1,53 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+import RxSwift
+import RxCocoa
+
+class {{ module_info.name }}: UIView, MVVMView {
+    // MARK: - Constants
+    private struct Constants {
+        
+    }
+
+    // MARK: - Variables
+    var viewModel: {{ module_info.name }}ViewModelProtocol! { 
+        didSet {
+            subscribe()
+        }
+    }
+    let disposeBag = DisposeBag()
+
+    // MARK: - Lifecycle
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        markup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    // MARK: - Configurations
+    func subscribe() {
+        
+    }
+    
+    // MARK: - Actions
+    
+
+    // MARK: - Markup
+    private func markup() {
+        
+    }
+}
+
+
+

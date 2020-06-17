@@ -1,0 +1,64 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import Foundation
+
+class {{ module_info.name }}Router: MVVMRouter {
+    
+    // MARK: - Enums
+    enum PresentationContext {
+        case `default`
+    }
+    
+    enum RouteType {
+        case `default`
+        case error(message: String, closeHandler: () -> Void)
+    }
+    
+    // MARK: - Properties
+    weak var baseViewController: UIViewController?
+    
+    // MARK: - Methods
+    func present(on baseVC: UIViewController, animated: Bool, context: Any?, completion: (() -> Void)?) {
+        guard let context = context as? PresentationContext else {
+            assertionFailure("The context type mismatch")
+            return
+        }
+        
+        baseViewController = baseVC
+        
+        switch context {
+        case .default: break
+        }
+    }
+    
+    func enqueueRoute(with context: Any?, animated: Bool, completion: (() -> Void)?) {
+        guard let routeType = context as? RouteType else {
+            assertionFailure("The route type mismatch")
+            return
+        }
+        
+        guard let baseVC = baseViewController else {
+            assertionFailure("baseViewController is not set")
+            return
+        }
+        
+        switch routeType {
+        case .default: break
+        case .error(let message, let closeHandler):
+            let errorAlertRouter = AlertRouter()
+            let context = AlertRouter.PresentationContext.error(message: message, closeHandler: closeHandler)
+            errorAlertRouter.present(on: baseVC, animated: animated, context: context, completion: completion)
+        }
+    }
+    
+    func dismiss(animated: Bool, completion: (() -> Void)?) {
+        baseViewController?.dismiss(animated: animated, completion: completion)
+    }
+    
+}

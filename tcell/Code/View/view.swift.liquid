@@ -1,0 +1,59 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+import RxSwift
+import RxCocoa
+import Reusable
+
+class {{ module_info.name }}: UITableViewCell, MVVMView, Reusable {
+    // MARK: - Constants 
+    private struct Constants {
+    
+    }
+
+    // MARK: - Variables
+    var viewModel: {{ module_info.name }}ViewModelProtocol! {
+        didSet {
+            subscribe()
+        }
+    }
+    var disposeBag = DisposeBag()
+
+    // MARK: - Outlets
+
+    // MARK: - Lifecycle
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        markup()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        disposeBag = DisposeBag()
+    }
+    
+    // MARK: - Configurations
+    private func subscribe() {
+        
+    }
+
+    // MARK: - Markup
+    private func markup() {
+        
+    }
+}
+
+
+
