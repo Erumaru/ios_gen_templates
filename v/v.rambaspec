@@ -8,7 +8,6 @@ license: "MIT"
 # The declarations for code files
 code_files:
 # View layer
-- {name: Repositories/Repository.swift, path: Code/Repository/Repository.swift.liquid}
 - {name: Routers/Router.swift, path: Code/Router/Router.swift.liquid}
 - {name: ViewModels/ViewModel.swift, path: Code/ViewModel/ViewModel.swift.liquid}
 - {name: Views/.swift, path: Code/View/View.swift.liquid}

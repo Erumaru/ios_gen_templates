@@ -20,7 +20,6 @@ class {{ module_info.name }}ViewModel: {{ module_info.name }}ViewModelProtocol {
     
     // MARK: - Properties
     var router: MVVMRouter
-    let repository: {{ module_info.name }}ViewRepository
     
     // MARK: - Method
     func close() {
@@ -35,7 +34,6 @@ class {{ module_info.name }}ViewModel: {{ module_info.name }}ViewModelProtocol {
     // MARK: - Lifecycle
     init(router: MVVMRouter) {
         self.router = router
-	self.repository = {{ module_info.name }}ViewDataRepository()
     }
 }
 
